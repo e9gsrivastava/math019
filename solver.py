@@ -15,17 +15,8 @@ def solver(start, end):
     end_month = end.month
     end_day = end.day
 
-    weekday_dict = {
-        "Sunday": 0,
-        "Monday": 1,
-        "Tuesday": 2,
-        "Wednesday": 3,
-        "Thursday": 4,
-        "Friday": 5,
-        "Saturday": 6,
-    }
     sunday_count = 0
-    current_day = weekday_dict["Sunday"]
+    current_day = 0
 
     for year in range(start_year, end_year + 1):
         is_leap_year = year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)
