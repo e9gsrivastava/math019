@@ -1,7 +1,6 @@
 '''this is find the num of Sundays'''
 
 from datetime import date
-from datetime import datetime
 
 
 def solver(start, end):
@@ -26,11 +25,9 @@ def solver(start, end):
         "Saturday": 6,
     }
     sunday_count = 0
-    current_day = weekday_dict[
-        datetime(start_year, start_month, start_day).strftime("%A")
-    ]
+    current_day = weekday_dict["Monday"]
 
-    for year in range(1900, end_year + 1):
+    for year in range(start_year, end_year + 1):
         is_leap_year = year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)
 
         for month in range(1, 13):
@@ -54,4 +51,4 @@ def solver(start, end):
 
 
 if __name__ == "__main__":
-    print(solver(date(2001, 1, 1), date(2023, 12, 31)))
+    print(solver(date(1700, 1, 1), date(2023, 12, 31)))
